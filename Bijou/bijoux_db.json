@@ -1,0 +1,14 @@
+produits: [
+    { id: 1, nom: "Alliance Or Pur 18K", prix: 3200, categorie: "Bagues", image: "bague_or.png" },
+    { id: 2, nom: "Bague Argent Marquise", prix: 2900, categorie: "Bagues", image: "bague_argent.png" },
+    { id: 3, nom: "Pendentif Amulette Solaire", prix: 4800, categorie: "Colliers", image: "amullette_or.jpg" },
+    { id: 4, nom: "Bague Trilogie Or Jaune", prix: 15500, categorie: "Bagues", image: "bague_or.png" },
+    { id: 5, nom: "Collier Rivière Argent", prix: 8900, categorie: "Colliers", image: "amullette_or.jpg" },
+    { id: 6, nom: "Chevalière Royale Argent", prix: 4200, categorie: "Bagues", image: "bague_argent.png" },
+    { id: 7, nom: "Bracelet Manchette Or", prix: 12500, categorie: "Bracelets", image: "bague_or.png" },
+    { id: 8, nom: "Pendentif Émeraude", prix: 7600, categorie: "Colliers", image: "amullette_or.jpg" },
+    { id: 9, nom: "Alliance Diamant", prix: 21000, categorie: "Bagues", image: "bague_or.png" },
+    { id: 10, nom: "Bague Saphir Moderne", prix: 5400, categorie: "Bagues", image: "bague_argent.png" },
+    { id: 11, nom: "Collier Cristal de Roche", prix: 3100, categorie: "Colliers", image: "amullette_or.jpg" },
+    { id: 12, nom: "Bague Fine Or Rose", prix: 1800, categorie: "Bagues", image: "bague_or.png" }
+],
