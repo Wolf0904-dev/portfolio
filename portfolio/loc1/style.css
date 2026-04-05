@@ -1,0 +1,370 @@
+/* --- 1. VARIABLES & POLICES --- */
+:root {
+    --primary: #ef4444;    /* Rouge Sport */
+    --accent: #eab308;     /* Or Luxe */
+    --dark: #121212;       /* Fond principal */
+    --card-bg: #1a1a1a;    /* Fond des cartes */
+    --light: #fafafa;      /* Texte blanc cassé */
+    --muted: #a3a3a3;      /* Texte gris */
+    --border: #333;        /* Bordures discrètes */
+    --gradient: linear-gradient(135deg, #ef4444 0%, #eab308 100%);
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- 2. NAVIGATION --- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* --- 3. HERO SECTION --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 5% 40px;
+    /* Utilise ton image hero-car.jpg */
+    background: linear-gradient(rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.8)), 
+                url('hero-car.jpg') center/cover no-repeat;
+}
+
+.hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    color: white;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 3rem;
+}
+
+.cta-button {
+    padding: 1.2rem 2.5rem;
+    background: var(--gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4);
+}
+
+/* --- 4. BARRE DE RECHERCHE --- */
+.search-section {
+    width: 95%;
+    max-width: 1100px;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 50px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+.search-field {
+    flex: 1;
+    min-width: 200px;
+    text-align: left;
+}
+
+.search-field label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent); /* Labels en Or */
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.search-field input, 
+.search-field select {
+    width: 100%;
+    padding: 12px;
+    background: var(--dark);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: white;
+    font-family: inherit;
+}
+
+.search-button {
+    background: var(--gradient);
+    color: white;
+    border: none;
+    padding: 0 30px;
+    height: 48px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+/* --- 5. GRILLE DES VOITURES --- */
+.cars-section {
+    padding: 6rem 5%;
+}
+
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 4rem;
+}
+
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.car-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 40px rgba(239, 68, 68, 0.15);
+}
+
+.car-image {
+    height: 220px;
+    background: #222; /* Fond par défaut */
+    position: relative;
+}
+
+.car-info {
+    padding: 2rem;
+}
+
+.car-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.car-category {
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.car-features {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.car-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.book-btn {
+    background: var(--gradient);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* --- 6. SERVICES (EFFET NÉON ROUGE AU SURVOL) --- */
+.features-section {
+    padding: 8rem 5%;
+    background: #0a0a0a;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    padding: 3.5rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    border-color: var(--primary); /* Bordure rouge */
+    transform: translateY(-15px);
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.2); /* Halo rouge */
+}
+
+.feature-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px var(--primary)); /* Icône qui brille */
+}
+
+/* La ligne rouge qui s'affiche en bas */
+.feature-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--primary);
+    transition: 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.feature-card:hover::after {
+    width: 100%;
+}
+
+.feature-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.feature-text {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* --- 7. FOOTER --- */
+footer {
+    padding: 4rem 5%;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    background: var(--dark);
+}
+
+.footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+/* --- 8. UTILITAIRES ANIMATIONS --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- 9. RESPONSIVE --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .search-section { flex-direction: column; }
+    .hero h1 { font-size: 3.5rem; }
+    .section-title { font-size: 2.8rem; }
+}
